@@ -28,6 +28,10 @@ class RoleSeeder extends Seeder
             'name' => RoleEnum::STUDENT->name,
         ]);
         Role::firstOrCreate([
+            'id' => RoleEnum::PARENT->value,
+            'name' => RoleEnum::PARENT->name,
+        ]);
+        Role::firstOrCreate([
             'id' => RoleEnum::SUPERVISOR->value,
             'name' => RoleEnum::SUPERVISOR->name,
         ]);

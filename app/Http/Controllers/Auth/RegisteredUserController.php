@@ -34,11 +34,9 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => ['required', 'string', 'max:32'],
-            'second_name' => ['required', 'string', 'max:32'],
-            'third_name' => ['required', 'string', 'max:32'],
-            'last_name' => ['required', 'string', 'max:32'],
+            'full_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:14'],
+            'age' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:128', 'unique:'.User::class],
             'national_id' => ['required', 'numeric', 'unique:'.User::class],
             'birth_date' => ['required', 'date'],
@@ -46,11 +44,9 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
-            'first_name' => $request->first_name,
-            'second_name' => $request->second_name,
-            'third_name' => $request->third_name,
-            'last_name' => $request->last_name,
+            'full_name' => $request->full_name,
             'email' => $request->email,
+            'age' => $request->age,
             'phone' => $request->phone,
             'national_id' => $request->national_id,
             'birth_date' => $request->birth_date,

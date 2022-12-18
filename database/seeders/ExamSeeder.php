@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Classes;
 use App\Models\Exam;
-use App\Models\Semester;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +17,7 @@ class ExamSeeder extends Seeder
     public function run()
     {
         Exam::create([
-            'semester_id' => Semester::first()->id
+            'class_id' => Classes::first()->id
         ]);
     }
 }

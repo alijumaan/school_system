@@ -4,14 +4,17 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\RoleEnum;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -19,13 +22,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'first_name',
-        'second_name',
-        'third_name',
-        'last_name',
+        'cne',
+        'full_name',
         'email',
         'birth_date',
         'phone',
+        'age',
         'national_id',
         'password',
     ];
@@ -50,4 +52,29 @@ class User extends Authenticatable
         'birth_date' => 'date',
         'role_id' => RoleEnum::class,
     ];
+
+//    public function setBirthDateAttribute($value)
+//    {
+//        if ($value != null) {
+//            $this->attributes['birth_date'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
+//        }
+//    }
+
+    public function getBirthDateAttribute(): string
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');
+    }
+
+    public function classes(): BelongsToMany
+    {
+        return $this->belongsToMany(Classes::class, 'class_user', 'student_id', 'class_id');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($user) {
+            $user->cne = 'STU-' . rand(000001, 9999999);
+        });
+    }
 }

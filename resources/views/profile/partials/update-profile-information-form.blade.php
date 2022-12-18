@@ -17,31 +17,13 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="first_name" :value="__('First name')" />
-            <x-text-input id="first_name" name="first_name" type="text" class="mt-1 block w-full" :value="old('first_name', $user->first_name)" autofocus autocomplete="first_name" />
-            <x-input-error class="mt-2" :messages="$errors->get('first_name')" />
+        <div class="flex items-center gap-4">
+            <x-input-label for="full_name" :value="__('Name')" />
+            <x-text-input id="full_name" name="full_name" type="text" class="mt-1 block w-full" :value="old('full_name', $user->full_name)" autofocus autocomplete="full_name" />
+            <x-input-error class="mt-2" :messages="$errors->get('full_name')" />
         </div>
 
-        <div>
-            <x-input-label for="second_name" :value="__('Second name')" />
-            <x-text-input id="second_name" name="second_name" type="text" class="mt-1 block w-full" :value="old('second_name', $user->second_name)" />
-            <x-input-error class="mt-2" :messages="$errors->get('second_name')" />
-        </div>
-
-        <div>
-            <x-input-label for="third_name" :value="__('Third name')" />
-            <x-text-input id="third_name" name="third_name" type="text" class="mt-1 block w-full" :value="old('third_name', $user->third_name)" />
-            <x-input-error class="mt-2" :messages="$errors->get('third_name')" />
-        </div>
-
-        <div>
-            <x-input-label for="last_name" :value="__('Last name')" />
-            <x-text-input id="last_name" name="last_name" type="text" class="mt-1 block w-full" :value="old('last_name', $user->last_name)" />
-            <x-input-error class="mt-2" :messages="$errors->get('last_name')" />
-        </div>
-
-        <div>
+        <div class="flex items-center gap-4">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />

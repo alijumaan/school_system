@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('role_id')->default(\App\Enums\RoleEnum::STUDENT->value)->constrained()->cascadeOnDelete();
+            $table->after('national_id', function () use ($table){
+                $table->foreignId('role_id')->default(\App\Enums\RoleEnum::STUDENT->value)->constrained()->cascadeOnDelete();
+            });
         });
     }
 

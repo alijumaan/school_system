@@ -17,12 +17,12 @@ class ClassroomSeeder extends Seeder
     {
         Classroom::create([
             'name' => 'Lap 1',
-            'location' => 'Floor one'
+            'location' => 'Floor one room NO.4'
         ]);
 
         Classroom::create([
-            'name' => 'Lap 2',
-            'location' => 'Floor two'
+            'name' => 'Computer Lap',
+            'location' => 'Floor two room NO.13'
         ]);
     }
 }

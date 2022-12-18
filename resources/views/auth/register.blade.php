@@ -2,32 +2,11 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
-        <!-- First name -->
+        <!-- Full name -->
         <div>
-            <x-input-label for="first_name" :value="__('First name')" />
-            <x-text-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" />
-            <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
-        </div>
-
-        <!-- Second name -->
-        <div>
-            <x-input-label for="second_name" :value="__('Second name')" />
-            <x-text-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" />
-            <x-input-error :messages="$errors->get('second_name')" class="mt-2" />
-        </div>
-
-        <!-- Third name -->
-        <div>
-            <x-input-label for="third_name" :value="__('Third name')" />
-            <x-text-input id="third_name" class="block mt-1 w-full" type="text" name="third_name" :value="old('third_name')" />
-            <x-input-error :messages="$errors->get('third_name')" class="mt-2" />
-        </div>
-
-        <!-- Last name -->
-        <div>
-            <x-input-label for="last_name" :value="__('Last name')" />
-            <x-text-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" />
-            <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
+            <x-input-label for="full_name" :value="__('Full name')" />
+            <x-text-input id="full_name" class="block mt-1 w-full" type="text" name="full_name" :value="old('full_name')" />
+            <x-input-error :messages="$errors->get('full_name')" class="mt-2" />
         </div>
 
         <!-- Phone -->
@@ -37,11 +16,18 @@
             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
 
-        <!-- Phone -->
+        <!-- National ID -->
         <div class="mt-4">
             <x-input-label for="national_id" :value="__('National ID')" />
             <x-text-input id="national_id" class="block mt-1 w-full" type="text" name="national_id" :value="old('national_id')" />
             <x-input-error :messages="$errors->get('national_id')" class="mt-2" />
+        </div>
+
+        <!-- Age -->
+        <div class="mt-4">
+            <x-input-label for="age" :value="__('Age')" />
+            <x-text-input id="age" class="block mt-1 w-full" type="text" name="age" :value="old('age')" />
+            <x-input-error :messages="$errors->get('age')" class="mt-2" />
         </div>
 
         <!-- Email Address -->
