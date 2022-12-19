@@ -19,9 +19,9 @@ class ProfileController extends Controller
             ->join('classrooms', 'classrooms.id', '=', 'classroom_student.classroom_id')
             ->join('lessons', 'lessons.id', '=', 'classrooms.lesson_id')
             ->select('users.*', 'classrooms.name as classroom', 'lessons.title as lesson')
-            ->distinct()
-            ->get()
-            ->unique();
+            ->orderBy('classroom')
+//            ->distinct()
+            ->get();
 
         $exams = User::student()
             ->join('exam_results', 'exam_results.student_id', '=', 'users.id')
@@ -29,6 +29,7 @@ class ProfileController extends Controller
             ->join('classrooms', 'classrooms.id', '=', 'exams.classroom_id')
             ->join('lessons', 'lessons.id', '=', 'classrooms.lesson_id')
             ->select('users.*', 'exam_results.score as score', 'lessons.title as lesson')
+            ->orderBy('score', 'desc')
             ->get();
 
         return view('dashboard', compact('students', 'exams'));
