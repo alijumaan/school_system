@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name', 32)->unique();
             $table->string('location', 255)->unique();
+            $table->foreignId('lesson_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

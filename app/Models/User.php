@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\RoleEnum;
 use Carbon\Carbon;
+use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,7 +15,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, MustVerifyEmail;
 
     /**
      * The attributes that are mass assignable.
@@ -65,9 +66,14 @@ class User extends Authenticatable
         return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');
     }
 
-    public function classes(): BelongsToMany
+    public function classrooms(): BelongsToMany
     {
-        return $this->belongsToMany(Classes::class, 'class_user', 'student_id', 'class_id');
+        return $this->belongsToMany(Classroom::class, 'classroom_user', 'student_id', 'classroom_id');
+    }
+
+    public function scopeStudent()
+    {
+        return $this->where('role_id', RoleEnum::STUDENT->value);
     }
 
     protected static function boot()
