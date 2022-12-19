@@ -20,7 +20,7 @@ class UserFactory extends Factory
     {
         return [
             'full_name' => fake('ar_SA')->name(),
-            'phone' => fake()->date(),
+            'phone' => fake('ar_SA')->phoneNumber(),
             'national_id' => rand(530976, 999999),
             'email' => fake()->unique()->safeEmail(),
             'birth_date' => fake()->date('Y-m-d'),
