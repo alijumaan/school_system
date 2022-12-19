@@ -13,11 +13,13 @@
                         <h3 style="margin-bottom: 15px;">Student</h3>
                         <thead>
                         <th class="border border-slate-600 p-2">ID</th>
-                        <th class="border border-slate-600 p-2">Full name</th>
+                        <th class="border border-slate-600 p-2">Student name</th>
                         <th class="border border-slate-600 p-2">National ID</th>
                         <th class="border border-slate-600 p-2">Birth date</th>
                         <th class="border border-slate-600 p-2">Phone</th>
                         <th class="border border-slate-600 p-2">Age</th>
+                        <th class="border border-slate-600 p-2">Classroom</th>
+                        <th class="border border-slate-600 p-2">Lesson</th>
                         </thead>
                         <tbody>
                         @forelse($students as $student)
@@ -28,6 +30,8 @@
                                 <td class="border border-slate-700 p-2">{{ $student->birth_date }}</td>
                                 <td class="border border-slate-700 p-2">{{ $student->phone }}</td>
                                 <td class="border border-slate-700 p-2">{{ $student->age }}</td>
+                                <td class="border border-slate-700 p-2">{{ $student->classroom }}</td>
+                                <td class="border border-slate-700 p-2">{{ $student->lesson }}</td>
                             </tr>
                         @empty
                             <td>No student found.</td>
@@ -46,12 +50,16 @@
                     <table class="border-separate border-spacing-2 border border-slate-500 ...">
                         <h3 style="margin-bottom: 15px;">Exams</h3>
                         <thead>
-                        <th class="border border-slate-600 p-2">ID</th>
+                        <th class="border border-slate-600 p-2">Student name</th>
+                        <th class="border border-slate-600 p-2">Lesson</th>
+                        <th class="border border-slate-600 p-2">Score</th>
                         </thead>
                         <tbody>
-                        @forelse($students as $student)
+                        @forelse($exams as $exam)
                             <tr>
-                                <td class="border border-slate-700 p-2">{{ $student->id }}</td>
+                                <td class="border border-slate-700 p-2">{{ $exam->full_name }}</td>
+                                <td class="border border-slate-700 p-2">{{ $exam->lesson }}</td>
+                                <td class="border border-slate-700 p-2">{{ $exam->score }}</td>
                             </tr>
                         @empty
                             <td>No exams found.</td>

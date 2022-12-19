@@ -17,10 +17,12 @@ class ExamResultSeeder extends Seeder
      */
     public function run()
     {
-        ExamResult::create([
-           'exam_id' => Exam::first()->id,
-           'student_id' => User::first()->id,
-           'score' => 90,
-        ]);
+        for ($i=1; $i<=Exam::count(); $i++) {
+            ExamResult::create([
+                'exam_id' => $i,
+                'student_id' => User::student()->get()->random()->id,
+                'score' => rand(77, 99),
+            ]);
+        }
     }
 }

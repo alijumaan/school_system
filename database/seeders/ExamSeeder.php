@@ -17,8 +17,11 @@ class ExamSeeder extends Seeder
      */
     public function run()
     {
-        Exam::create([
-            'classroom_id' => Classroom::first()->id
-        ]);
+
+        for ($i=1; $i<=Classroom::count(); $i++) {
+            Exam::create([
+                'classroom_id' => $i
+            ]);
+        }
     }
 }

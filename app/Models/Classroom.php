@@ -11,6 +11,6 @@ class Classroom extends Model
 
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'classroom_user', 'classroom_id', 'student_id');
+        return $this->belongsToMany(User::class, 'classroom_student', 'classroom_id', 'student_id');
     }
 }

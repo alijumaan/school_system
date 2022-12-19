@@ -68,12 +68,17 @@ class User extends Authenticatable
 
     public function classrooms(): BelongsToMany
     {
-        return $this->belongsToMany(Classroom::class, 'classroom_user', 'student_id', 'classroom_id');
+        return $this->belongsToMany(Classroom::class, 'classroom_student', 'student_id', 'classroom_id');
     }
 
     public function scopeStudent()
     {
         return $this->where('role_id', RoleEnum::STUDENT->value);
+    }
+
+    public function scopeTeacher()
+    {
+        return $this->where('role_id', RoleEnum::TEACHER->value);
     }
 
     protected static function boot()

@@ -17,23 +17,17 @@ class ClassroomSeeder extends Seeder
      */
     public function run()
     {
-        $classroom1 = Classroom::create([
-            'name' => 'Lap 1',
-            'lesson_id' => Lesson::first()->id,
-            'teacher_id' => User::where('role_id', RoleEnum::TEACHER->value)->first()->id,
-            'location' => 'Floor one room NO.4'
-        ]);
+        for ($i=1; $i<10; $i++) {
+            $classroom = Classroom::create([
+                'name' => 'Lap '.$i,
+                'lesson_id' => Lesson::all()->random()->id,
+                'teacher_id' => User::teacher()->get()->random()->id,
+                'location' => 'Floor '.$i.' room NO.'.$i
+            ]);
 
-        $classroom2 = Classroom::create([
-            'name' => 'Computer Lap',
-            'lesson_id' => Lesson::first()->id,
-            'teacher_id' => User::where('role_id', RoleEnum::TEACHER->value)->first()->id,
-            'location' => 'Floor two room NO.13'
-        ]);
+            $studentId = User::student()->get()->random()->id;
 
-        $studentId = User::where('role_id', RoleEnum::STUDENT->value)->first()->id;
-
-        $classroom1->users()->attach($studentId);
-        $classroom2->users()->attach($studentId);
+            $classroom->users()->attach($studentId);
+        }
     }
 }

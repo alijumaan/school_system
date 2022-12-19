@@ -19,14 +19,15 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'full_name' => fake()->name(),
+            'full_name' => fake('ar_SA')->name(),
             'phone' => fake()->date(),
-            'national_id' => fake()->randomNumber(),
+            'national_id' => rand(530976, 999999),
             'email' => fake()->unique()->safeEmail(),
-            'birth_date' => now(),
-            'role_id' => RoleEnum::ADMIN->value,
+            'birth_date' => fake()->date('Y-m-d'),
+            'age' => rand(10, 35),
+            'role_id' => RoleEnum::STUDENT->value,
             'email_verified_at' => now(),
-            'password' => bcrypt('password'),
+            'password' => bcrypt('student'),
             'remember_token' => Str::random(10),
         ];
     }
