@@ -17,11 +17,6 @@ class StudentController extends Controller
             ->orderBy('classroom')
             ->paginate();
 
-        return view('students.index', compact('students'));
-    }
-
-    public function create()
-    {
-        return view('students.create');
+        return view('students', compact('students'));
     }
 }

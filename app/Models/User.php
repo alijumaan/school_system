@@ -81,6 +81,11 @@ class User extends Authenticatable
         return $this->where('role_id', RoleEnum::TEACHER->value);
     }
 
+    public function isAdmin(): bool
+    {
+        return auth()->user()->role_id->value === RoleEnum::ADMIN->value;
+    }
+
     protected static function boot()
     {
         parent::boot();

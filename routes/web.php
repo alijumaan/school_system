@@ -11,18 +11,18 @@ Route::get('/',[HomeController::class, 'index']);
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::controller(ProfileController::class)->group(function () {
-        Route::get('/profile', 'edit')->name('profile.edit');
-        Route::patch('/profile', 'update')->name('profile.update');
-        Route::delete('/profile', 'destroy')->name('profile.destroy');
+        Route::get('profile', 'edit')->name('profile.edit');
+        Route::patch('profile', 'update')->name('profile.update');
+        Route::delete('profile', 'destroy')->name('profile.destroy');
     });
 
     Route::controller(StudentController::class)->group(function () {
-        Route::get('/students', 'index')->name('students.index');
-        Route::get('/students/create', 'create')->name('students.create');
+        Route::get('students', 'index')->name('students');
     });
 
-
-    Route::get('exams', [ExamController::class, 'index'])->name('exams');
+    Route::controller(ExamController::class)->group(function () {
+        Route::get('exams', 'index')->name('exams');
+    });
 
 });
 
