@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\StoreStudentToClassroomRequest;
 use App\Models\Classroom;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -18,11 +18,11 @@ class StudentController extends Controller
         return view('admin.students.addToClassroom', compact('students', 'classrooms'));
     }
 
-    public function store(Request $request)
+    public function store(StoreStudentToClassroomRequest $request)
     {
         DB::table('classroom_student')->insert([
-            'classroom_id' => $request->classroom_id,
-            'student_id' => $request->student_id,
+            'classroom_id' => $request->input('classroom_id'),
+            'student_id' => $request->input('student_id'),
         ]);
 
         return redirect()->route('students');

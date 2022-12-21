@@ -13,6 +13,7 @@ Route::middleware(['admin'])->group(function () {
 
     Route::controller(ExamController::class)->group(function () {
         Route::get('exams/create', 'create')->name('exams.create');
+        Route::post('exams', 'store')->name('exams.store');
     });
 
 });
