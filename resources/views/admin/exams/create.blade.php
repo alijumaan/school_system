@@ -32,10 +32,12 @@
 
                                 <div class="mt-4">
                                     <x-input-label for="classroom_id" :value="__('Classroom')" />
-                                    <select id="student_id" name="classroom_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                                    <select id="classroom_id" name="classroom_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                                         <option value="">-- {{ __('Classroom') }} --</option>
-                                        @forelse($classrooms as $key => $classroom)
-                                            <option value="{{ $key }}">{{ $classroom }}</option>
+                                        @forelse($classrooms as $classroom)
+                                            <option value="{{ $classroom->id }}">
+                                                {{ $classroom->name }} ({{ $classroom->lesson->title }})
+                                            </option>
                                         @empty
                                         @endforelse
                                     </select>

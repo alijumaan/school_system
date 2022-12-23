@@ -13,8 +13,15 @@ class ExamController extends Controller
 {
     public function create()
     {
-        $students = User::student()->orderBy('full_name')->pluck('full_name', 'id')->all();
-        $classrooms = Classroom::orderBy('name')->pluck('name', 'id')->all();
+        $students = User::student()
+            ->orderBy('full_name')
+            ->pluck('full_name', 'id')
+            ->all();
+
+        $classrooms = Classroom::with('lesson')
+            ->select('id', 'lesson_id', 'name')
+            ->orderBy('name')
+            ->get();
 
         return view('admin.exams.create', compact('students', 'classrooms'));
     }
@@ -27,7 +34,7 @@ class ExamController extends Controller
             ->first();
 
         if (!$classroom) {
-            return back()->with('status', 'Student\'s not exist in this classroom!');
+            return back()->with('status', 'Student does not exist in this classroom!');
         }
 
         $exam = Exam::find($request->input('classroom_id'));
@@ -38,7 +45,7 @@ class ExamController extends Controller
             ->first();
 
         if ($examResult) {
-            return back()->with('status', 'Student\'s exam already registered!');
+            return back()->with('status', 'Student\'s exam already exist!');
         }
 
         $exam = Exam::firstOrCreate([
