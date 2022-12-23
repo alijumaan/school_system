@@ -173,6 +173,22 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name'                  => 'Name',
+        'full_name'             => 'Full name',
+        'phone'                 => 'Phone',
+        'username'              => 'Username',
+        'national_id'           => 'National ID',
+        'email'                 => 'Email',
+        'age'                   => 'Age',
+        'password'              => 'Password',
+        'password_confirmation' => 'Password confirmation',
+        'title'                 => 'Title',
+        'description'           => 'Description',
+        'birth_date'            => 'Date of birth',
+        'image'                 => 'Image',
+        'terms_and_conditions'  => 'Terms and conditions',
+        'login'                => 'Login',
+    ],
 
 ];

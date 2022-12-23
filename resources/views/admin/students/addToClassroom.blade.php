@@ -10,11 +10,9 @@
             <div class="dark:bg-gray-800 overflow-hidden sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col sm:justify-center items-center">
-                        @if (session('status'))
-                            <div class="text-sm text-red-600 dark:text-red-400 space-y-1">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+
+                        <x-input-error :messages="session('error_msg')" class="mt-2" />
+
                         <div class="w-full sm:max-w-md bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
                             <form method="POST" action="{{ route('students.store') }}">
                                 @csrf

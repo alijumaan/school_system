@@ -32,7 +32,7 @@ class StudentController extends Controller
             ->first();
 
         if ($query) {
-            return back()->with('status', 'Student already exist!');
+            return back()->with('error_msg', 'Student already exist!');
         }
 
         DB::table('classroom_student')->insert([

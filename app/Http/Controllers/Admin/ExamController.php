@@ -34,7 +34,7 @@ class ExamController extends Controller
             ->first();
 
         if (!$classroom) {
-            return back()->with('status', 'Student does not exist in this classroom!');
+            return back()->with('error_msg', 'Student does not exist in this classroom!');
         }
 
         $exam = Exam::find($request->input('classroom_id'));
