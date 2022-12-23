@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('exam_id')->constrained()->cascadeOnDelete();
             $table->foreignId('student_id')->constrained('users')->cascadeOnDelete();
             $table->unsignedTinyInteger('score');
+            $table->unique(['exam_id', 'student_id'], 'student_exam_results_unique');
             $table->timestamps();
         });
     }

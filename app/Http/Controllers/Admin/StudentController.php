@@ -20,6 +20,15 @@ class StudentController extends Controller
 
     public function store(StoreStudentToClassroomRequest $request)
     {
+        $query = DB::table('classroom_student')
+            ->where('classroom_id', $request->input('classroom_id'))
+            ->where('student_id', $request->input('student_id'))
+            ->first();
+
+        if ($query) {
+            return back()->with('status', 'Student already exist!');
+        }
+
         DB::table('classroom_student')->insert([
             'classroom_id' => $request->input('classroom_id'),
             'student_id' => $request->input('student_id'),

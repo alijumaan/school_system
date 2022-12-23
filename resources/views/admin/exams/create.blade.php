@@ -10,10 +10,14 @@
             <div class="dark:bg-gray-800 overflow-hidden sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col sm:justify-center items-center">
+                        @if (session('status'))
+                            <div class="text-sm text-red-600 dark:text-red-400 space-y-1">
+                                {{ session('status') }}
+                            </div>
+                        @endif
                         <div class="w-full sm:max-w-md bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
                             <form method="POST" action="{{ route('exams.store') }}">
                                 @csrf
-
                                 <div>
                                     <x-input-label for="student_id" :value="__('Student')" />
                                     <select id="student_id" name="student_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
