@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 32)->unique();
+            $table->string('title_en', 32)->unique();
+            $table->string('title_ar', 32)->unique();
             $table->string('short_name', 11)->unique();
-            $table->string('description', 255)->nullable();
+            $table->string('description_en', 255)->nullable();
+            $table->string('description_ar', 255)->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 32)->unique();
+            $table->string('name_en', 32)->unique();
+            $table->string('name_ar', 32)->unique();
             $table->string('location', 255)->unique();
             $table->foreignId('lesson_id')->constrained()->cascadeOnDelete();
             $table->foreignId('teacher_id')->constrained('users')->cascadeOnDelete();

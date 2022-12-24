@@ -10,17 +10,30 @@
                     </a>
                 </div>
 
+                <!-- Language Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    @if(session('lang') == 'ar')
+                        <x-nav-link :href="route('toEnglish')">
+                            English
+                        </x-nav-link>
+                    @else
+                        <x-nav-link :href="route('toArabic')">
+                            Arabic
+                        </x-nav-link>
+                    @endif
+                </div>
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('students')" :active="request()->routeIs('students')">
-                        {{ __('Students') }}
+                        {{ __('global.students') }}
                     </x-nav-link>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('exams')" :active="request()->routeIs('exams')">
-                        {{ __('Exams') }}
+                        {{ __('global.exams') }}
                     </x-nav-link>
                 </div>
             </div>

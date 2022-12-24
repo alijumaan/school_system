@@ -19,7 +19,8 @@ class ClassroomSeeder extends Seeder
     {
         for ($i=1; $i<10; $i++) {
             $classroom = Classroom::create([
-                'name' => 'Lap '.$i,
+                'name_en' => 'Lap '.$i,
+                'name_ar' => 'الفصل  '.$i,
                 'lesson_id' => Lesson::all()->random()->id,
                 'teacher_id' => User::teacher()->get()->random()->id,
                 'location' => 'Floor '.$i.' room NO.'.$i

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Students') }}
+            {{ __('global.students') }}
         </h2>
     </x-slot>
 
@@ -11,21 +11,21 @@
                 @admin
                 <div class="mx-7 mt-7 text-gray-900 dark:text-gray-100">
                     <a href="{{ route('students.create') }}" class="py-3 inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-                        Add to classroom
+                        {{ __('global.add_to_classroom') }}
                     </a>
                 </div>
                 @endadmin
                 <div class="mx-7 mt-5 text-gray-900 dark:text-gray-100">
                     <table class="border-separate border-spacing-2 border border-slate-500 ...">
                         <thead>
-                        <th class="border border-slate-600 p-2">ID</th>
-                        <th class="border border-slate-600 p-2">Student name</th>
-                        <th class="border border-slate-600 p-2">National ID</th>
-                        <th class="border border-slate-600 p-2">Birth date</th>
-                        <th class="border border-slate-600 p-2">Phone</th>
-                        <th class="border border-slate-600 p-2">Age</th>
-                        <th class="border border-slate-600 p-2">Classroom</th>
-                        <th class="border border-slate-600 p-2">Lesson</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.id') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.student_name') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.national_id') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.birth_date') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.phone') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.age') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.classroom') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.lesson') }}</th>
                         </thead>
                         <tbody>
                         @forelse($students as $student)

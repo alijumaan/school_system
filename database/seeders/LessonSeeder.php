@@ -15,33 +15,43 @@ class LessonSeeder extends Seeder
     public function run()
     {
         Lesson::create([
-            'title' => 'Mathematics',
+            'title_en' => 'Mathematics',
+            'title_ar' => 'الرياضيات',
             'short_name' => 'MATH',
-            'description' => '',
+            'description_en' => '',
+            'description_ar' => '',
         ]);
 
         Lesson::create([
-            'title' => 'Computer science',
+            'title_en' => 'Computer science',
+            'title_ar' => 'علوم الكومبيوتر',
             'short_name' => 'CP',
-            'description' => '',
+            'description_en' => '',
+            'description_ar' => '',
         ]);
 
         Lesson::create([
-            'title' => 'Chemistry science',
+            'title_en' => 'Chemistry science',
+            'title_ar' => 'علوم الكيمياء',
             'short_name' => 'CHEM',
-            'description' => '',
+            'description_en' => '',
+            'description_ar' => '',
         ]);
 
         Lesson::create([
-            'title' => 'Physics science',
+            'title_en' => 'Physics science',
+            'title_ar' => 'علوم الفيزياء',
             'short_name' => 'PHYS',
-            'description' => '',
+            'description_en' => '',
+            'description_ar' => '',
         ]);
 
         Lesson::create([
-            'title' => 'Biology science',
+            'title_en' => 'Biology science',
+            'title_ar' => 'علم الأحياء',
             'short_name' => 'BIO',
-            'description' => '',
+            'description_en' => '',
+            'description_ar' => '',
         ]);
     }
 }
