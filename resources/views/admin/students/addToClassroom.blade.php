@@ -34,7 +34,7 @@
                                         <option value="">-- {{ __('Classroom') }} --</option>
                                         @forelse($classrooms as $key => $classroom)
                                             <option value="{{ $classroom->id }}">
-                                                {{ $classroom->name }} ( {{ $classroom->lesson->title }} )
+                                                {{ $classroom['name_'. app()->getLocale()] }} ( {{ $classroom->lesson['title_'. app()->getLocale()] }} )
                                             </option>
                                         @empty
                                         @endforelse

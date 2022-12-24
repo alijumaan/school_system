@@ -29,4 +29,5 @@ return [
     'add_test_result' => 'Add test result',
     'students' => 'Students',
     'exams' => 'Exams',
+    'save' => 'Save',
 ];

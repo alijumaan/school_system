@@ -16,9 +16,11 @@ class StudentController extends Controller
             ->pluck('full_name', 'id')
             ->all();
 
+        $locale = app()->getLocale();
+
         $classrooms = Classroom::with('lesson')
-            ->select('id', 'lesson_id', 'name')
-            ->orderBy('name')
+            ->select('id', 'lesson_id', 'name_'. $locale)
+            ->orderBy('name_'. $locale)
             ->get();
 
         return view('admin.students.addToClassroom', compact('students', 'classrooms'));
