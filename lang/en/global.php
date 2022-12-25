@@ -17,6 +17,7 @@ return [
     'please_confirm_your_password_before_continuing' => 'يرجى تأكيد كلمة المرور الخاصة بك قبل المتابعة.',
     'search' => 'بحث',
     'id' => 'ID',
+    'cne' => 'CNE',
     'student_name' => 'Student name',
     'national_id' => 'National ID',
     'birth_date' => 'Date of birth',
