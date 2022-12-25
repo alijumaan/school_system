@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Enums\RoleEnum;
 use App\Models\Classroom;
+use App\Models\ClassYear;
 use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -23,6 +24,7 @@ class ClassroomSeeder extends Seeder
                 'name_ar' => 'الفصل  '.$i,
                 'lesson_id' => Lesson::all()->random()->id,
                 'teacher_id' => User::teacher()->get()->random()->id,
+                'class_year_id' => ClassYear::all()->random()->id,
                 'location' => 'Floor '.$i.' room NO.'.$i
             ]);
 

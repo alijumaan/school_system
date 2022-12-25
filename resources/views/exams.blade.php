@@ -20,6 +20,7 @@
                         <thead>
                         <th class="border border-slate-600 p-2">{{ __('global.student_name') }}</th>
                         <th class="border border-slate-600 p-2">{{ __('global.lesson') }}</th>
+                        <th class="border border-slate-600 p-2">{{ __('global.class_year') }}</th>
                         <th class="border border-slate-600 p-2">{{ __('global.score') }}</th>
                         </thead>
                         <tbody>
@@ -27,6 +28,7 @@
                             <tr>
                                 <td class="border border-slate-700 p-2">{{ $exam->full_name }}</td>
                                 <td class="border border-slate-700 p-2">{{ $exam->lesson }}</td>
+                                <td class="border border-slate-700 p-2">{{ $exam->class_year }}</td>
                                 <td class="border border-slate-700 p-2">{{ $exam->score }}</td>
                             </tr>
                         @empty

@@ -21,7 +21,6 @@ return new class extends Migration
             $table->date('birth_date');
             $table->string('phone', 20)->unique();
             $table->bigInteger('national_id')->unique();
-            $table->string('class', 128)->nullable();
             $table->tinyInteger('age');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

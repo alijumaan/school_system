@@ -25,6 +25,7 @@ return [
     'age' => 'العمر',
     'score' => 'الدرجة',
     'classroom' => 'الفصل',
+    'class_year' => 'السنة الدراسية',
     'class' => 'الصف الدراسي',
     'lesson' => 'المادة',
     'add_to_classroom' => 'اضافة للصف الدراسي',

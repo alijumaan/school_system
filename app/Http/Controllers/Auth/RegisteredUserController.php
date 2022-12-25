@@ -38,7 +38,7 @@ class RegisteredUserController extends Controller
             'full_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', new PhoneNumber(), 'numeric', 'unique:users,phone'],
             'age' => ['required', 'integer'],
-            'class' => ['required', 'string', 'max:128'],
+            'class_year_id' => ['required'],
             'email' => ['required', 'string', 'email', 'max:128', 'unique:'.User::class],
             'national_id' => ['required', 'numeric', 'unique:'.User::class],
             'birth_date' => ['required', 'date'],
@@ -51,7 +51,7 @@ class RegisteredUserController extends Controller
             'age' => $request->age,
             'phone' => $request->phone,
             'national_id' => $request->national_id,
-            'class' => $request->class,
+            'class_year_id' => $request->class_year_id,
             'birth_date' => $request->birth_date,
             'password' => Hash::make($request->password),
         ]);

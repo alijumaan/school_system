@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Classroom extends Model
 {
-    protected $fillable = ['name_en', 'name_ar', 'location', 'lesson_id', 'teacher_id'];
+    protected $fillable = ['name_en', 'name_ar', 'location', 'lesson_id', 'class_year_id', 'teacher_id'];
 
     public function users(): BelongsToMany
     {
@@ -18,5 +18,10 @@ class Classroom extends Model
     public function lesson(): BelongsTo
     {
         return $this->belongsTo(Lesson::class);
+    }
+
+    public function classYear(): BelongsTo
+    {
+        return $this->belongsTo(ClassYear::class);
     }
 }

@@ -10,7 +10,8 @@
             @admin
             <div class="mt-7 text-gray-900 dark:text-gray-100">
                 <a href="{{ route('students.create') }}"
-                   class="py-3 inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
+                   class="py-3 inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest
+                   hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                     {{ __('global.add_to_classroom') }}
                 </a>
             </div>
@@ -45,7 +46,8 @@
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                         <input id="filter-radio-example-1" type="radio" value="" name="filter-radio"
-                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                               focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-1"
                                                class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last
                                             day</label>
@@ -55,7 +57,8 @@
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                         <input checked="" id="filter-radio-example-2" type="radio" value=""
                                                name="filter-radio"
-                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                               focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-2"
                                                class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last
                                             7 days</label>
@@ -64,7 +67,8 @@
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                         <input id="filter-radio-example-3" type="radio" value="" name="filter-radio"
-                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                               focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-3"
                                                class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last
                                             30 days</label>
@@ -73,7 +77,8 @@
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                         <input id="filter-radio-example-4" type="radio" value="" name="filter-radio"
-                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                               focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-4"
                                                class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last
                                             month</label>
@@ -82,7 +87,8 @@
                                 <li>
                                     <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
                                         <input id="filter-radio-example-5" type="radio" value="" name="filter-radio"
-                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800
+                                               focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="filter-radio-example-5"
                                                class="ml-2 w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300">Last
                                             year</label>
@@ -103,7 +109,8 @@
                             </svg>
                         </div>
                         <x-text-input type="text" id="table-search" placeholder="Search for items"
-                                      class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                      class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500
+                                      dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             Hi
                         </x-text-input>
                     </div>
@@ -113,64 +120,54 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="py-3 px-6">{{ __('global.id') }}</th>
-                        <th scope="col" class="py-3 px-6">{{ __('global.cne') }}</th>
+{{--                        <th scope="col" class="py-3 px-6">{{ __('global.cne') }}</th>--}}
                         <th scope="col" class="py-3 px-6">{{ __('global.student_name') }}</th>
                         <th scope="col" class="py-3 px-6">{{ __('global.national_id') }}</th>
                         <th scope="col" class="py-3 px-6">{{ __('global.birth_date') }}</th>
                         <th scope="col" class="py-3 px-6">{{ __('global.phone') }}</th>
                         <th scope="col" class="py-3 px-6">{{ __('global.age') }}</th>
                         <th scope="col" class="py-3 px-6">{{ __('global.class') }}</th>
-                        <th scope="col" class="py-3 px-6">{{ __('global.classroom') }}</th>
-                        <th scope="col" class="py-3 px-6">{{ __('global.lesson') }}</th>
+{{--                        <th scope="col" class="py-3 px-6">{{ __('global.classroom') }}</th>--}}
+{{--                        <th scope="col" class="py-3 px-6">{{ __('global.lesson') }}</th>--}}
                         <th scope="col" class="py-3 px-6"></th>
                     </tr>
                     </thead>
                     <tbody>
                     @forelse($students as $student)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $student->id }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $student->cne }}
+{{--                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">--}}
+{{--                                {{ $student->cne }}--}}
+{{--                            </th>--}}
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $student->full_name }} <br>
+                                <small>{{ $student->cne }}</small>
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $student->full_name }}
-                            </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $student->national_id }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $student->birth_date }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $student->phone }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $student->age }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $student->class }}
+                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $student->class_year }}
                             </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $student->classroom }}
-                            </th>
-                            <th scope="row"
-                                class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $student->lesson }}
-                            </th>
+{{--                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">--}}
+{{--                                {{ $student->classroom }}--}}
+{{--                            </th>--}}
+{{--                            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">--}}
+{{--                                {{ $student->lesson }}--}}
+{{--                            </th>--}}
                             <td class="py-4 px-6">
-                                <a href="#"
-                                   class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                             </td>
                         </tr>
                     @empty
