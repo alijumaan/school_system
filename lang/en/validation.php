@@ -144,6 +144,7 @@ return [
     'url' => 'The :attribute must be a valid URL.',
     'ulid' => 'The :attribute must be a valid ULID.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'phone' => 'The number must start with 05 and the number of digits is 10',
 
     /*
     |--------------------------------------------------------------------------

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use App\Rules\PhoneNumber;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +36,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'full_name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:14'],
+            'phone' => ['required', new PhoneNumber(), 'numeric', 'unique:users,phone'],
             'age' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:128', 'unique:'.User::class],
             'national_id' => ['required', 'numeric', 'unique:'.User::class],

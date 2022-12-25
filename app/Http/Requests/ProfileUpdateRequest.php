@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\User;
+use App\Rules\PhoneNumber;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -18,6 +19,7 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'full_name' => ['string', 'max:255'],
             'email' => ['email', 'max:128', Rule::unique(User::class)->ignore($this->user()->id)],
+//            'phone' => [new PhoneNumber(), 'numeric', Rule::unique(User::class)->ignore($this->user()->id)],
         ];
     }
 }

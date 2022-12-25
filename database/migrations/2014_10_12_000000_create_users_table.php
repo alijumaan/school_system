@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('full_name', 255);
             $table->string('email', 128)->unique();
             $table->date('birth_date');
-            $table->string('phone', 20);
+            $table->string('phone', 20)->unique();
             $table->bigInteger('national_id')->unique();
             $table->tinyInteger('age');
             $table->timestamp('email_verified_at')->nullable();

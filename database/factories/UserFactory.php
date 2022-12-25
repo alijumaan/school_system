@@ -20,8 +20,8 @@ class UserFactory extends Factory
     {
         return [
             'full_name' => fake('ar_SA')->name(),
-            'phone' => fake('ar_SA')->phoneNumber(),
-            'national_id' => rand(530976, 999999),
+            'phone' => '05'. fake()->numberBetween(12345678, 99999999),
+            'national_id' => '10'. fake()->numberBetween(12345678, 99999999),
             'email' => fake()->unique()->safeEmail(),
             'birth_date' => fake()->date('Y-m-d'),
             'age' => rand(10, 35),

@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'full_name' => 'ادمن',
-            'phone' => '+966566207808',
+            'phone' => '0566207808',
             'national_id' => 123456789,
             'email' => 'admin@admin.com',
             'birth_date' => '20-12-1988',
