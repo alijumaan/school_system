@@ -16,7 +16,9 @@ class StudentController extends Controller
             ->join('classrooms', 'classrooms.id', '=', 'classroom_student.classroom_id')
             ->join('lessons', 'lessons.id', '=', 'classrooms.lesson_id')
             ->select('users.*', 'classrooms.name_'. $locale .' as classroom', 'lessons.title_'. $locale .' as lesson')
+            ->orderBy('class')
             ->orderBy('classroom')
+            ->orderBy('lesson')
             ->paginate();
 
         return view('students', compact('students'));

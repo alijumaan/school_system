@@ -16,6 +16,13 @@
             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
 
+        <!-- Class -->
+        <div class="mt-4">
+            <x-input-label for="class" :value="__('validation.attributes.class')" />
+            <x-text-input id="class" class="block mt-1 w-full" type="text" name="class" :value="old('class')" />
+            <x-input-error :messages="$errors->get('class')" class="mt-2" />
+        </div>
+
         <!-- National ID -->
         <div class="mt-4">
             <x-input-label for="national_id" :value="__('validation.attributes.national_id')" />

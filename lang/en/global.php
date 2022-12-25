@@ -25,6 +25,7 @@ return [
     'age' => 'Age',
     'score' => 'Score',
     'classroom' => 'Classroom',
+    'class' => 'Class',
     'lesson' => 'Lesson',
     'add_to_classroom' => 'Add to classroom',
     'add_test_result' => 'Add test result',

@@ -178,6 +178,7 @@ return [
         'name'                  => 'Name',
         'full_name'             => 'Full name',
         'phone'                 => 'Phone',
+        'class'                 => 'Class',
         'username'              => 'Username',
         'national_id'           => 'National ID',
         'email'                 => 'Email',

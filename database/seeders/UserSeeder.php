@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'phone' => '0566207808',
             'national_id' => 123456789,
             'email' => 'admin@admin.com',
+            'class' => '',
             'birth_date' => '20-12-1988',
             'age' => rand(10, 35),
             'role_id' => RoleEnum::ADMIN->value,
@@ -29,8 +30,10 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        User::factory(50)->create();
+        User::factory(50)->create(['class' => 'اول ثانوي']);
+        User::factory(50)->create(['class' => 'ثاني ثانوي']);
+        User::factory(50)->create(['class' => 'ثالث ثانوي']);
         User::factory(10)->create(['role_id' => RoleEnum::TEACHER->value]);
-        User::factory(50)->create(['role_id' => RoleEnum::PARENT->value]);
+        User::factory(150)->create(['role_id' => RoleEnum::PARENT->value]);
     }
 }

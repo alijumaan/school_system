@@ -17,7 +17,7 @@ class ClassroomSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i<10; $i++) {
+        for ($i=1; $i <= User::student()->count(); $i++) {
             $classroom = Classroom::create([
                 'name_en' => 'Lap '.$i,
                 'name_ar' => 'الفصل  '.$i,
