@@ -11,8 +11,14 @@ class Student extends Component
 {
     use WithPagination;
 
+    public $class_year_id;
+    public object $classYears;
+
     public function mount()
-    {}
+    {
+        $this->classYears = ClassYear::all();
+    }
+
     public function render()
     {
         $locale = app()->getLocale();
@@ -28,14 +34,15 @@ class Student extends Component
                 'lessons.title_'. $locale .' as lesson',
                 'class_years.title_'. $locale .' as class_year'
             )
+            ->when($this->class_year_id != null, function ($query) {
+                $query->where('users.class_year_id', $this->class_year_id);
+            })
             ->orderBy('classroom')
             ->orderBy('lesson')
             ->paginate();
 
-        $classYears = ClassYear::all();
         return view('livewire.student', [
             'students' => $students,
-            'classYears' => $classYears,
         ]);
     }
 }
