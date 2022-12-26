@@ -26,6 +26,7 @@ return [
     'score' => 'Score',
     'classroom' => 'Classroom',
     'class_year' => 'Class year',
+    'all' => 'All',
     'class' => 'Class',
     'lesson' => 'Lesson',
     'add_to_classroom' => 'Add to classroom',

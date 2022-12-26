@@ -26,6 +26,7 @@ return [
     'score' => 'الدرجة',
     'classroom' => 'الفصل',
     'class_year' => 'السنة الدراسية',
+    'all' => 'الكل',
     'class' => 'الصف الدراسي',
     'lesson' => 'المادة',
     'add_to_classroom' => 'اضافة للصف الدراسي',
