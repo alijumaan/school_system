@@ -12,6 +12,7 @@ class Student extends Component
     use WithPagination;
 
     public $class_year_id;
+    public $search;
     public object $classYears;
 
     public function mount()
@@ -34,11 +35,16 @@ class Student extends Component
                 'lessons.title_'. $locale .' as lesson',
                 'class_years.title_'. $locale .' as class_year'
             )
+            ->when($this->search != null, function ($query) {
+                $query->where('users.full_name', 'LIKE', '%' . $this->search . '%');
+            })
             ->when($this->class_year_id != null, function ($query) {
                 $query->where('users.class_year_id', $this->class_year_id);
             })
+            ->orderBy('id', 'desc')
             ->orderBy('classroom')
             ->orderBy('lesson')
+            ->distinct('users.full_name')
             ->paginate();
 
         return view('livewire.student', [
