@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\ClassYearEnum;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -11,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rules\Enum;
 
 class RegisteredUserController extends Controller
 {
@@ -38,7 +40,7 @@ class RegisteredUserController extends Controller
             'full_name' => ['required', 'string', 'max:255'],
             'phone' => ['required', new PhoneNumber(), 'numeric', 'unique:users,phone'],
             'age' => ['required', 'integer'],
-            'class_year_id' => ['required'],
+            'class_year_id' => ['required', new Enum(ClassYearEnum::class)],
             'email' => ['required', 'string', 'email', 'max:128', 'unique:'.User::class],
             'national_id' => ['required', 'numeric', 'unique:'.User::class],
             'birth_date' => ['required', 'date'],

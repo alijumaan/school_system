@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\ClassYearEnum;
 use App\Enums\RoleEnum;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -30,9 +31,9 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
-        User::factory(50)->create(['class_year_id' => 1]);
-        User::factory(50)->create(['class_year_id' => 2]);
-        User::factory(50)->create(['class_year_id' => 3]);
+        User::factory(50)->create(['class_year_id' => ClassYearEnum::FIRST->value]);
+        User::factory(50)->create(['class_year_id' => ClassYearEnum::SECONDE->value]);
+        User::factory(50)->create(['class_year_id' => ClassYearEnum::THIRD->value]);
         User::factory(10)->create(['role_id' => RoleEnum::TEACHER->value]);
         User::factory(150)->create(['role_id' => RoleEnum::PARENT->value]);
     }

@@ -21,9 +21,9 @@
             <x-input-label for="class_year_id" :value="__('validation.attributes.class')" />
             <select id="class_year_id" name="class_year_id" class="block mt-1 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                 <option value="">-- {{ __('global.class') }} --</option>
-                <option value="1">أول ثانوي</option>
-                <option value="2">ثاني ثانوي</option>
-                <option value="3">ثالث ثانوي</option>
+                <option value="{{ \App\Enums\ClassYearEnum::FIRST->value }}">أول ثانوي</option>
+                <option value="{{ \App\Enums\ClassYearEnum::SECONDE->value }}">ثاني ثانوي</option>
+                <option value="{{ \App\Enums\ClassYearEnum::THIRD->value }}">ثالث ثانوي</option>
             </select>
             <x-input-error :messages="$errors->get('class_year_id')" class="mt-2" />
 
