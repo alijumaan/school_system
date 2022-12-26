@@ -7,6 +7,7 @@ use App\Enums\RoleEnum;
 use Carbon\Carbon;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -70,6 +71,11 @@ class User extends Authenticatable
     public function classrooms(): BelongsToMany
     {
         return $this->belongsToMany(Classroom::class, 'classroom_student', 'student_id', 'classroom_id');
+    }
+
+    public function classYear(): BelongsTo
+    {
+        return $this->belongsTo(ClassYear::class);
     }
 
     public function scopeStudent()

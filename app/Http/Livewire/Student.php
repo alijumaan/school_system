@@ -41,9 +41,10 @@ class Student extends Component
             ->when($this->class_year_id != null, function ($query) {
                 $query->where('users.class_year_id', $this->class_year_id);
             })
+            ->orderBy('id', 'desc')
             ->orderBy('classroom')
             ->orderBy('lesson')
-            ->distinct('users.full_name')
+            ->distinct('users.id', 'classrooms.id')
             ->paginate();
 
         return view('livewire.student', [
