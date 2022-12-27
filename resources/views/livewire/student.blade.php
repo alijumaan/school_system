@@ -10,6 +10,7 @@
     @endadmin
     <br>
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <div class=" flex justify-center items-center pb-4 text-white" wire:loading.delay>loading..</div>
         <div class="flex justify-between items-center pb-4">
             <div>
                 <select wire:model="class_year_id" class="dark:focus:ring-gray-700 block px-7 mt-1 w-full inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
@@ -29,7 +30,6 @@
                 </div>
                 <x-text-input wire:model="searchQuery" type="text" placeholder="Search for items" class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
             </div>
-
         </div>
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
