@@ -12,12 +12,13 @@ class Student extends Component
     use WithPagination;
 
     public $class_year_id;
-    public $search;
+    public $searchQuery;
     public object $classYears;
 
     public function mount()
     {
         $this->classYears = ClassYear::all();
+        $this->searchQuery = '';
     }
 
     public function render()
@@ -35,10 +36,10 @@ class Student extends Component
                 'lessons.title_'. $locale .' as lesson',
                 'class_years.title_'. $locale .' as class_year'
             )
-            ->when($this->search != null, function ($query) {
-                $query->where('users.full_name', 'LIKE', '%' . $this->search . '%');
+            ->when($this->searchQuery != '', function ($query) {
+                $query->where('users.full_name', 'LIKE', '%' . $this->searchQuery . '%');
             })
-            ->when($this->class_year_id != null, function ($query) {
+            ->when($this->class_year_id != '', function ($query) {
                 $query->where('users.class_year_id', $this->class_year_id);
             })
             ->orderBy('id', 'desc')
