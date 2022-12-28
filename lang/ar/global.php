@@ -32,6 +32,7 @@ return [
     'add_to_classroom' => 'اضافة للصف الدراسي',
     'add_test_result' => 'وضع درجات الامتحان',
     'students' => 'الطلاب',
+    'student' => 'الطالب',
     'exams' => 'الامتحانات',
     'save' => 'حفظ',
     'choose_class_year_first' => 'اختر سنة الفصل أولا',

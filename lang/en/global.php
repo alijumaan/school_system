@@ -32,6 +32,7 @@ return [
     'add_to_classroom' => 'Add to classroom',
     'add_test_result' => 'Add test result',
     'students' => 'Students',
+    'student' => 'Student',
     'exams' => 'Exams',
     'save' => 'Save',
     'choose_class_year_first' => 'Choose class year first',
