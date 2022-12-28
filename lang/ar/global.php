@@ -38,4 +38,5 @@ return [
     'choose_class_year_first' => 'اختر سنة الفصل أولا',
     'select_student' => 'اختر طالب',
     'select_classroom' => 'اختر فصل دراسي',
+    'no_result' => 'لا توجد نتائج',
 ];

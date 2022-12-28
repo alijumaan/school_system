@@ -38,4 +38,5 @@ return [
     'choose_class_year_first' => 'Choose class year first',
     'select_student' => 'Select student',
     'select_classroom' => 'Select classroom',
+    'no_result' => 'No result.',
 ];

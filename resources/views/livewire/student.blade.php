@@ -84,7 +84,7 @@
             @empty
                 <tr>
                     <td class="py-4 px-6">
-                        <span class="font-medium dark:text-white">حدد الصف الدراسي</span>
+                        <span class="font-medium dark:text-white">{{ __('global.no_result') }}</span>
                     </td>
                 </tr>
             @endforelse
