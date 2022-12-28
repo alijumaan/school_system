@@ -34,4 +34,7 @@ return [
     'students' => 'Students',
     'exams' => 'Exams',
     'save' => 'Save',
+    'choose_class_year_first' => 'Choose class year first',
+    'select_student' => 'Select student',
+    'select_classroom' => 'Select classroom',
 ];

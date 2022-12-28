@@ -42,9 +42,8 @@ class Student extends Component
             ->when($this->class_year_id != '', function ($query) {
                 $query->where('users.class_year_id', $this->class_year_id);
             })
-            ->orderBy('id', 'desc')
+            ->orderBy('class_year')
             ->orderBy('classroom')
-            ->orderBy('lesson')
             ->distinct('users.id', 'classrooms.id')
             ->paginate();
 

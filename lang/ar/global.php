@@ -34,4 +34,7 @@ return [
     'students' => 'الطلاب',
     'exams' => 'الامتحانات',
     'save' => 'حفظ',
+    'choose_class_year_first' => 'اختر سنة الفصل أولا',
+    'select_student' => 'اختر طالب',
+    'select_classroom' => 'اختر فصل دراسي',
 ];
