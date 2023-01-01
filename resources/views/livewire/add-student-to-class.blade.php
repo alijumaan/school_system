@@ -4,6 +4,7 @@
             <div class="flex flex-col sm:justify-center items-center">
 
                 <x-input-error :messages="session('error_msg')" class="mt-2" />
+
                 <div class="w-full sm:max-w-md bg-white dark:bg-gray-800 overflow-hidden sm:rounded-lg">
                     <form wire:submit.prevent="store">
 

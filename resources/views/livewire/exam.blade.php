@@ -2,6 +2,18 @@
     <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
         <div wire:loading.delay class=" flex justify-center items-center pb-4 text-white">loading..</div>
         <div class="flex justify-between items-center pb-4">
+            <div>
+                <select wire:model="class_year_id" class="dark:focus:ring-gray-700 block px-7 mt-1 w-full inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
+                    <option value="">{{ __('global.all') }}</option>
+                    @forelse($classYears as $classYear)
+                        <option value="{{ $classYear->id }}">
+                            {{ $classYear['title_'. app()->getLocale()] }}
+                        </option>
+                    @empty
+                    @endforelse
+                </select>
+            </div>
+
             <div class="relative">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>

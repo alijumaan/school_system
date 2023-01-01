@@ -2,15 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\ClassYear;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Exam extends Component
 {
+    use WithPagination;
+
+    public object $classYears;
     public $searchQuery;
+    public $class_year_id;
 
     public function mount()
     {
+        $this->classYears = ClassYear::all();
+
         $this->searchQuery = '';
     }
 
@@ -32,6 +40,9 @@ class Exam extends Component
             )
             ->when($this->searchQuery != '', function ($query) {
                 $query->where('users.full_name', 'LIKE', '%' . $this->searchQuery . '%');
+            })
+            ->when($this->class_year_id != '', function ($query) {
+                $query->where('users.class_year_id', $this->class_year_id);
             })
             ->orderBy('score', 'desc')
             ->paginate();
