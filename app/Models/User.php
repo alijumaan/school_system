@@ -68,6 +68,18 @@ class User extends Authenticatable
         return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');
     }
 
+    public function getFullNameAttribute(): string
+    {
+        if ($this->attributes['role_id'] != RoleEnum::TEACHER->value) {
+            return $this->attributes['full_name'];
+        }
+
+        return match (app()->getLocale()) {
+            'ar' => 'أ. '. $this->attributes['full_name'],
+            'en' => 'Mr. '. $this->attributes['full_name'],
+        };
+    }
+
     public function classrooms(): BelongsToMany
     {
         return $this->belongsToMany(Classroom::class, 'classroom_student', 'student_id', 'classroom_id');

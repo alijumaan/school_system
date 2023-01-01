@@ -30,10 +30,15 @@
                     </x-nav-link>
                 </div>
 
-                <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('exams')" :active="request()->routeIs('exams')">
                         {{ __('global.exams') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('classrooms')" :active="request()->routeIs('classrooms')">
+                        {{ __('global.classrooms') }}
                     </x-nav-link>
                 </div>
             </div>

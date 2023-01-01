@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\ExamController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::controller(ExamController::class)->group(function () {
         Route::get('exams', 'index')->name('exams');
+    });
+
+    Route::controller(ClassroomController::class)->group(function () {
+        Route::get('classrooms', 'index')->name('classrooms');
     });
 
 });
