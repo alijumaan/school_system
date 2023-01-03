@@ -24,6 +24,13 @@ class Classroom extends Component
             'lesson_id',
             'teacher_id'
         )
+            ->orderBy('name_'. app()->getLocale())
+            ->when($this->searchQuery != '', function ($query) {
+                $query->withWhereHas('teacher', function ($query) {
+                    $query->where('full_name', 'LIKE', '%' . $this->searchQuery . '%');
+                });
+            })
+            ->withCount('students')
             ->paginate();
 
         return view('livewire.classroom', [

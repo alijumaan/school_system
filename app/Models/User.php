@@ -56,13 +56,6 @@ class User extends Authenticatable
         'role_id' => RoleEnum::class,
     ];
 
-//    public function setBirthDateAttribute($value)
-//    {
-//        if ($value != null) {
-//            $this->attributes['birth_date'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
-//        }
-//    }
-
     public function getBirthDateAttribute(): string
     {
         return Carbon::createFromFormat('Y-m-d', $this->attributes['birth_date'])->format('m/d/Y');

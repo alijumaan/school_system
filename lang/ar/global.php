@@ -34,6 +34,7 @@ return [
     'add_test_result' => 'وضع درجات الامتحان',
     'add_student_to_classroom' => 'اضافة طالب في فصل دراسي',
     'students' => 'الطلاب',
+    'students_count' => 'عدد الطلاب',
     'student' => 'الطالب',
     'exams' => 'الامتحانات',
     'classrooms' => 'الفصول',

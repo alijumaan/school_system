@@ -34,6 +34,7 @@ return [
     'add_test_result' => 'Add test result',
     'add_student_to_classroom' => 'Add student to classroom',
     'students' => 'Students',
+    'students_count' => 'Students count',
     'student' => 'Student',
     'exams' => 'Exams',
     'classrooms' => 'Classrooms',

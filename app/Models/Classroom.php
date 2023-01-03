@@ -18,7 +18,7 @@ class Classroom extends Model
         'teacher_id',
     ];
 
-    public function users(): BelongsToMany
+    public function students(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'classroom_student', 'classroom_id', 'student_id');
     }
